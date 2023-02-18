@@ -1,0 +1,93 @@
+span{
+
+    margin-right: 1rem;
+
+}
+
+
+
+.sort-dropdown{
+
+    border-top: 1px solid rgb(194, 194, 194);
+    padding-top: 2rem;
+    width: 100%;
+    justify-self: flex-start;
+    align-self: flex-start;
+    
+
+
+
+}
+
+.filter-dropdown{
+
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+.filter-dropdown .header{
+
+    display: flex;
+    cursor: pointer;
+
+
+}
+
+.filter-dropdown .date{
+
+    
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    padding: 1rem;
+    transition: all 0.5s ease-in;
+}
+
+.filter-dropdown .date.active{
+
+    display: flex;
+
+
+}
+
+.filter-parameter{
+
+    
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    
+}
+
+.filter-parameter span{
+
+    display: flex;
+
+
+}
+
+.filter-options{
+
+    display: none;
+
+
+
+}
+
+.filter-options.active{
+
+    display: flex;
+
+}
+
+.filter-options input{
+
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+
+}
