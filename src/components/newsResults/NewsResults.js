@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './news.css'
 import Grid from '@mui/system/Unstable_Grid/Grid';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
 
 
-
 // Generating the news card results and customizing them
 // Take a variable that can generate the card elements
 
-class NewsResults extends Component {
-  
-
-
-  render() {
-    
-   
+function NewsResults(props){
+ 
     let newsArticles;
-    const articles = this.props.articles;
+    const articles = props.data;
     
     // Modify the date format
     
@@ -26,13 +19,9 @@ class NewsResults extends Component {
     // Verify if the data from the navbar is received
     if(articles){
       
-    
-      
       newsArticles = (
 
-            
-            
-            <Grid container spacing={8} marginTop={5}>
+            <Grid container spacing={{ xs: 8, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} marginLeft={2}  marginRight={2} rowSpacing={8}>
               
               {articles.map(article => (
                 
@@ -66,18 +55,15 @@ class NewsResults extends Component {
                     </div> 
                   </a>
                  
-                  </Grid>      
+                </Grid>      
 
 
               ))}
 
             
             </Grid>
-          
-            
-
-
-            )
+        
+      )
             
        
 
@@ -89,27 +75,18 @@ class NewsResults extends Component {
 
     
     return (
-      <div className='container'>
+      <div>
         
-        {/* Display data from the api into the cards  */}
+        {/* Display data from the api into the cards */}
         {newsArticles}
         
         
       </div>
     )
-  }
+  
 }
-
-NewsResults.propTypes = {
-
-  articles: PropTypes.array.isRequired
-
-
-}
-
-export default NewsResults;
 
 // Make pagination work
 // Make them responsive and clean
-// Build a sort component that is dependednt on the newsresults
-// Make a filter component dependent on the newsResults component 
+
+export default NewsResults;

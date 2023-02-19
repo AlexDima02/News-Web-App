@@ -1,0 +1,107 @@
+span{
+
+    margin-right: 1rem;
+
+}
+
+.header{
+
+    font-size: 1.3rem;
+    
+}
+
+.sort-dropdown{
+
+    
+    padding-top: 2rem;
+    width: 100%;
+    justify-self: flex-start;
+    align-self: flex-start;
+    
+
+
+
+}
+
+.filter-dropdown{
+
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+.filter-dropdown .header{
+
+    display: flex;
+    cursor: pointer;
+
+
+}
+
+.filter-dropdown .date{
+
+    
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    transition: all 0.5s ease-in;
+}
+
+.filter-dropdown .date.active{
+
+    display: flex;
+
+
+}
+
+.filter-parameter{
+
+    
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    padding-right: 1.5rem;
+}
+
+.filter-parameter span{
+
+    display: flex;
+    vertical-align: bottom;
+
+}
+
+.filter-options{
+
+    display: none;
+
+
+}
+
+.filter-options.active{
+
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
+}
+
+.filter-options input{
+
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+        
+
+}
+
+/* Sort parameter */
+.sort-parameter{
+
+
+    font-size: 1.3rem;
+    padding-right: 1rem;
+
+}
