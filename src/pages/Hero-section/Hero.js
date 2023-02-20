@@ -1,28 +1,45 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import './hero.css';
 import NewsResults from '../../components/newsResults/NewsResults';
+import { Pagination } from '@mui/material';
 
 
 
+function Hero(props){
+   
+  const [ currentPage, setCurrentPage ] = useState(1);
+  const [ postsPerPage, setPostPerPage ] = useState(10); 
 
-class Hero extends Component {
-    constructor(props){
-        super(props);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = props.data.slice(firstPostIndex, lastPostIndex);
+  
+  console.log(currentPage);  
 
 
-    }
+  const changePage = (e, p) => {
+
+    
+      console.log(e, p);
+      setCurrentPage(p);
+  
+  }
 
   
 
-  render() {
+   
+
+
     return (
       <div className='container-grid'>
-        <NewsResults  data={this.props.data}/>
+        <NewsResults  data={currentPosts} />
         {/* This should be the pagination that is dependent on Hero section */}
-        {/* {this.state.topics.length > 0 ? (<Home items={this.state.topics} min={this.state.minDate} max={this.state.maxDate} quantity={this.state.amount} url={this.state.apiUrl} api={this.state.apiKey} search={this.state.searchText}/>) : null}; */}
+        <div className='pagination-container'>
+          <Pagination count={10} variant="outlined" shape="rounded" onChange={changePage}></Pagination>
+        </div>
       </div>
     )
-  }
+  
 }
 
 export default Hero;

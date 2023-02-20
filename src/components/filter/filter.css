@@ -6,30 +6,34 @@ span{
 
 .header{
 
-    font-size: 1.3rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
     
 }
 
 .sort-dropdown{
 
     
-    padding-top: 2rem;
-    width: 100%;
-    justify-self: flex-start;
-    align-self: flex-start;
     
-
-
+    max-width: 100%;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    padding-right: 2rem;
 
 }
 
 .filter-dropdown{
 
-    margin-left: 2rem;
+    
     display: flex;
     flex-direction: column;
-
-
+    align-items: flex-end;
 
 }
 
@@ -37,7 +41,7 @@ span{
 
     display: flex;
     cursor: pointer;
-
+    padding-left: 2rem;
 
 }
 
@@ -46,7 +50,7 @@ span{
     
     display: none;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     transition: all 0.5s ease-in;
 }
 
@@ -61,17 +65,19 @@ span{
 
     
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding-right: 1.5rem;
+    
 }
 
 .filter-parameter span{
 
     display: flex;
     vertical-align: bottom;
-
+    width: 100%;
+    font-weight: bold;
 }
 
 .filter-options{
@@ -85,23 +91,47 @@ span{
 
     display: flex;
     flex-direction: column;
-    max-width: 100%;
+    width: 100%;
 
 }
 
 .filter-options input{
 
     margin-right: 1rem;
-    margin-left: 0.5rem;
+    margin-bottom: 1rem;
         
+
+}
+
+.filter-options label{
+
+    padding-bottom: 0.5rem;
+
+
+}
+
+.menu-options{
+
+    
+    min-width: 50%;
+    margin: 4rem auto;
+    
 
 }
 
 /* Sort parameter */
 .sort-parameter{
 
+    color: rgb(149, 149, 149);
+    font-size: 1rem;
+    font-weight: bold;
+    
+} 
 
-    font-size: 1.3rem;
-    padding-right: 1rem;
+#param-select{
 
+    border: none;
+    outline-offset: 0;
+    outline-style: hidden;
+    
 }

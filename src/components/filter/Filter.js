@@ -8,12 +8,13 @@ import './filter.css';
 function Filter(props) {
     console.log(props.max);
     console.log(props.min);
-    let filter = 'header';
-    let parameter = 'date';
-    let option = 'filter-parameter';
-    let inputs = 'filter-options';
+    let filter = 'header'; // Filter container
+    let parameter = 'date'; // Date container with date selector
+    let option = 'filter-parameter';  // Date parameter
+    let inputs = 'filter-options'; // Date options
    
     const [switchToggled, setSwitchToggled] = useState(false);
+    const [dateToggled, setDateToggled] = useState(false);
     
     const ToggleSwitch = () => {
 
@@ -23,10 +24,19 @@ function Filter(props) {
 
     }
 
+    const toggleDates = () => {
+
+          // Change the state whenever the element is clicked
+          dateToggled ? setDateToggled(false) : setDateToggled(true);
+          console.log(dateToggled);
+
+
+    }
+
     // If the switch is true give active class 
     // Filter and date options parameter
-    filter += switchToggled ? ' active' : ' active';
-    option += switchToggled ? ' active' : '';
+    filter += switchToggled ? ' active' : '';
+    option += dateToggled ? ' active' : '';
     
     // If filter is active on click, show the date parameter
     if(filter === 'header active'){
@@ -46,14 +56,16 @@ function Filter(props) {
 
                 <div>
                   <div className={filter} onClick={ToggleSwitch}>
-                    <span>Filter by</span><TuneIcon className='icons'/>
+                    <span>Filter by</span>
+                    <TuneIcon className='icons'/>
                   </div>
     
-                  <div className={parameter} onClick={ToggleSwitch}>
+                  <div className={parameter} onClick={toggleDates}>
     
-                       <div className={option} onClick={ToggleSwitch}>
+                        <div className={option} onClick={toggleDates}>
     
-                            <span>Date <KeyboardArrowDownIcon className='icons'/></span>
+                            <span>Date </span>
+                            <KeyboardArrowDownIcon className='icons'/>
                             
                         </div> 
     

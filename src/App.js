@@ -16,7 +16,7 @@ class App extends React.Component{
 
       // Get Api when i search for a specific topic  
         searchText: '',
-        amount: 10,
+        amount: 100,
         apiUrl: 'https://newsapi.org/v2/everything',
         apiKey: 'dd9fc6f879594e27987d6e1e8b05a369',
         topics: [],
@@ -138,26 +138,26 @@ class App extends React.Component{
              <Navbar text={this.state.searchText} onTextChange={this.onTextChange} />
              <div className='container-hero'>
             {/* Extracting the data from api into another array that we can manipulate in other component */} 
-            <div className='menu-options'>
-              <div className='filter-dropdown'>
-                
-                  {/* Filter component that give the data to the navbar state */}
-                  {/* Customized in the sort component */}
-                  <Filter max={this.state.maxDate} min={this.state.minDate} func={this.filterThings}></Filter>
-                  <div className='sort-dropdown'>
+              <div className='menu-options'>
+                <div className='filter-dropdown'>
+                  
+                    {/* Filter component that give the data to the navbar state */}
+                    {/* Customized in the sort component */}
+                    <Filter max={this.state.maxDate} min={this.state.minDate} func={this.filterThings}></Filter>
+                    <div className='sort-dropdown'>
+              
+                      <span className='sort-parameter'>Sort by:</span>
+                      <select onChange={(e) => this.sortThings(e)} id="param-select">
+                          <option value="">Please choose an option</option>
+                          <option value="new">Newest first</option>
+                          <option value="old">Oldest first</option>
+                      </select>
             
-                    <span className='sort-parameter'>Sort by:</span>
-                    <select onChange={(e) => this.sortThings(e)} id="param-select">
-                        <option value="">--Please choose an option--</option>
-                        <option value="new">Newest first</option>
-                        <option value="old">Oldest first</option>
-                    </select>
-          
-                  </div>
+                    </div>
+                </div>
+                
+                
               </div>
-              
-              
-            </div>
             
            
                 <Hero data={this.state.topics}/>

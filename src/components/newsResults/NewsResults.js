@@ -86,7 +86,4 @@ function NewsResults(props){
   
 }
 
-// Make pagination work
-// Make them responsive and clean
-
 export default NewsResults;
