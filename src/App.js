@@ -17,8 +17,6 @@ class App extends React.Component{
       // Get Api when i search for a specific topic  
         searchText: '',
         amount: 100,
-        apiUrl: 'https://newsapi.org/v2/everything',
-        apiKey: 'dd9fc6f879594e27987d6e1e8b05a369',
         topics: [],
         minDate:'',
         maxDate:'',
@@ -36,21 +34,41 @@ class App extends React.Component{
 
   onTextChange = (e) => {
 
-    this.setState({searchText: e.target.value}, () => {
+    this.setState({searchText: e.target.value}, async () => {
 
-        console.log(this.state.searchText);
-        axios.get(`${this.state.apiUrl}?q=${this.state.searchText}&apiKey=${this.state.apiKey}&pageSize=${this.state.amount}&language=en&from=${this.state.minDate}&to=${this.state.maxDate}`)
-        .then((res) => {
+        console.log(this.state);
+        // axios.get(`${this.state.apiUrl}?q=${this.state.searchText}&apiKey=${this.state.apiKey}&pageSize=${this.state.amount}&language=en&from=${this.state.minDate}&to=${this.state.maxDate}`)
+        // .then((res) => {
   
-          console.log(res);
+        //   console.log(res);
           
-          this.setState({topics: res.data.articles});
+        //   this.setState({topics: res.data.articles});
   
-        }).catch((err) => {
+        // }).catch((err) => {
   
-          console.log(err);
+        //   console.log(err);
   
-        });
+        // });
+        // Pass parameters from state to the backend url dinamically 
+        let obj = this.state.searchText;
+        let minDate = this.state.minDate;
+        let maxDate = this.state.maxDate;
+        let amount = this.state.amount;
+        if (obj) { // this will never be `undefined`
+          // create query parameters
+          const params = new URLSearchParams({ obj, minDate, maxDate, amount });
+          // send the request
+          const res = await fetch(`http://localhost:5000/newsCreate?${params}`);
+          if (!res.ok) {
+            throw new Error(`${res.status}: ${await res.text()}`) ;
+          }
+      
+          const data = await res.json();
+          this.setState({topics: data.articles});
+          
+          
+          
+        }
   
     });
 
@@ -65,7 +83,7 @@ class App extends React.Component{
     // It works only if you filter first and then search for something
     
     if(e.target.name == 'minDate'){
-  
+      e.stopPropagation();
       console.log(e.target.name);
       this.setState({minDate: e.target.value}, () => {
         console.log(this.state.minDate);
@@ -76,7 +94,7 @@ class App extends React.Component{
       
   
     }else{
-
+      e.stopPropagation();
       this.setState({maxDate: e.target.value}, () => {
        
         console.log(this.state.maxDate);
@@ -130,7 +148,7 @@ class App extends React.Component{
 
   
   render(){
-    
+    console.log(this.state.topics);
     return (
    
       <MuiThemeProvider>

@@ -42,7 +42,6 @@ function Filter(props) {
     if(filter === 'header active'){
 
         parameter += ' active';
-        
 
     }
     // If i click on date parameter show me the input options
@@ -68,9 +67,11 @@ function Filter(props) {
                             <KeyboardArrowDownIcon className='icons'/>
                             
                         </div> 
-    
-                        <div className={inputs}>
-    
+
+                  </div>
+
+                  <div className={inputs}>
+      
                           <label htmlFor="start">Start date:</label>
                           <input type="date" id="start" name="minDate"
                                   
@@ -80,11 +81,9 @@ function Filter(props) {
                           <input type="date" id="end" name="maxDate"
                                   
                                   value={props.max} onChange={(e) => props.func(e)}/>
-                        
-                        </div>  
-
-                  </div>
     
+                  </div>  
+                
                   </div>
   )
 }
