@@ -58,7 +58,7 @@ class App extends React.Component{
           // create query parameters
           const params = new URLSearchParams({ obj, minDate, maxDate, amount });
           // send the request
-          const res = await fetch(`http://localhost:5000/newsCreate?${params}`);
+          const res = await fetch(`https://news-web-app-backend.onrender.com/newsCreate?${params}`);
           if (!res.ok) {
             throw new Error(`${res.status}: ${await res.text()}`) ;
           }
