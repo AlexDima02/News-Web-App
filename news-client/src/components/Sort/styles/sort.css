@@ -1,0 +1,29 @@
+/* Sort parameter */
+.sort-parameter{
+
+    color: rgb(149, 149, 149);
+    font-size: 1rem;
+    font-weight: bold;
+    width: 60px;
+    
+} 
+
+#param-select{
+
+    border: none;
+    outline-offset: 0;
+    outline-style: hidden;
+    
+}
+
+.sort-dropdown{
+
+    
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: flex;
+    padding-right: 2rem;
+
+}

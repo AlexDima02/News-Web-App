@@ -1,0 +1,17 @@
+.navbar{
+
+    background-color: rgb(0, 110, 255);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    line-height: 3rem;
+
+    
+}
+
+.logo{
+
+    color: white;
+    font-size: 1.5rem;
+
+}
