@@ -34,7 +34,7 @@ function Home({data, maxDate, minDate, filterThings, sortThings, onTextChange, t
     <div>
         <div className='presentation-section'>
             <div className='black-overlay'></div>
-            <img src="./src/assets/markus-winkler-k_Am9hKISLM-unsplash.jpg" alt="" />
+            <img src="assets/markus-winkler-k_Am9hKISLM-unsplash.jpg" alt="" />
             <div className='search-bar-wrapper'>
                 <h1>I am interested in...</h1>
                 <SearchBar onTextChange={onTextChange} text={text}/>
