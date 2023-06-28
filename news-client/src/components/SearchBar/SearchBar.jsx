@@ -8,7 +8,7 @@ function SearchBar({text, onTextChange}) {
 
   return (
     <>
-        <input type="text" className='search-bar-input' value={text} onChange={(e) => onTextChange(e)}/>
+        <input type="text" className='search-bar-input' onChange={(e) => onTextChange(e)}/>
         
     </>
   )
